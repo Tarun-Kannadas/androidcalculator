@@ -13,27 +13,52 @@
         android:hint="Enter the First Number"
         android:layout_marginHorizontal="25dp"
         android:layout_marginBottom="10dp"
+        android:autofillHints="false"
         app:layout_constraintBottom_toTopOf="@+id/num2"
         android:id="@+id/num1"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/result_background"
+        android:elevation="6dp"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter the Second Number"
+        android:autofillHints="false"
         android:layout_marginBottom="10dp"
         android:layout_marginHorizontal="25dp"
         app:layout_constraintBottom_toTopOf="@+id/button_layout"
         android:id="@+id/num2"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/result_background"
+        android:elevation="6dp"
         />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/button_layout"
-        android:textSize="25dp"
         android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:padding="12dp"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/result_background"
+        android:elevation="6dp"
+        android:hint="Your result is..."
+        app:layout_constraintTop_toBottomOf="@+id/clear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <TextView
@@ -44,8 +69,28 @@
         app:layout_constraintBottom_toTopOf="@id/num1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="CALCULATOR"
+        android:text="CALCULATER"
         android:textSize="25dp"
+        />
+
+    <TextView
+        android:layout_width="125dp"
+        android:layout_height="70dp"
+        android:scaleType="fitCenter"
+        android:id="@+id/clear"
+        android:text="CLEAR"
+        android:textSize="24dp"
+        android:contentDescription="clear"
+        app:layout_constraintTop_toBottomOf="@id/button_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:padding="12dp"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/clear_background"
+        android:elevation="6dp"
         />
 
     <LinearLayout
@@ -71,7 +116,7 @@
                 android:layout_height="70dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/plus"
-                android:background="null"
+                android:background="@color/white"
                 android:id="@+id/add"
                 android:contentDescription="add"
                 />
@@ -81,7 +126,7 @@
                 android:layout_height="70dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/minus"
-                android:background="null"
+                android:background="@color/white"
                 android:id="@+id/subtract"
                 android:contentDescription="subtract"
                 />
@@ -93,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margintop="8dp"
+            android:layout_marginTop="8dp"
             >
 
             <ImageButton
@@ -101,7 +146,7 @@
             android:layout_height="70dp"
             android:scaleType="fitCenter"
             android:src="@drawable/multiply"
-            android:background="null"
+            android:background="@color/white"
             android:id="@+id/into"
             android:contentDescription="multiply"
             />
@@ -111,7 +156,7 @@
             android:layout_height="70dp"
             android:scaleType="fitCenter"
             android:src="@drawable/divide"
-            android:background="null"
+            android:background="@color/white"
             android:id="@+id/divide"
             android:contentDescription="divide"
             />
