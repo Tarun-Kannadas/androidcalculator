@@ -49,43 +49,128 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int no1 = Integer.parseInt(num1.getText().toString());
-                int no2 = Integer.parseInt(num2.getText().toString());
-                int res = add(no1,no2);
-                result.setText(String.valueOf(res));
+
+                String input1 = num1.getText().toString();
+                String input2 = num2.getText().toString();
+
+                if (input1.contains(".") || input2.contains("."))
+                {
+                    result.setText("Input only Integers");
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run()
+                        {
+                            num1.setText("");
+                            num2.setText("");
+                            result.setText("");
+                        }
+                    },2000);
+                }
+                else
+                {
+                    int no1 = Integer.parseInt(num1.getText().toString());
+                    int no2 = Integer.parseInt(num2.getText().toString());
+                    int res = add(no1,no2);
+                    result.setText(String.valueOf(res));
+                }
             }
         });
         subtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int no1 = Integer.parseInt(num1.getText().toString());
-                int no2 = Integer.parseInt(num2.getText().toString());
-                int res = sub(no1,no2);
-                result.setText(String.valueOf(res));
+
+                String input1 = num1.getText().toString();
+                String input2 = num2.getText().toString();
+
+                if (input1.contains(".") || input2.contains("."))
+                {
+                    result.setText("Input only Integers");
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run()
+                        {
+                            num1.setText("");
+                            num2.setText("");
+                            result.setText("");
+                        }
+                    },2000);
+                }
+                else
+                {
+                    int no1 = Integer.parseInt(num1.getText().toString());
+                    int no2 = Integer.parseInt(num2.getText().toString());
+                    int res = sub(no1,no2);
+                    result.setText(String.valueOf(res));
+                }
             }
         });
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int no1 = Integer.parseInt(num1.getText().toString());
-                int no2 = Integer.parseInt(num2.getText().toString());
 
-                if (no2 == 0) {
-                    Toast.makeText(getApplicationContext(), "Can't Divide by Zero", Toast.LENGTH_SHORT).show();
-                    result.setText("Undefined");
-                } else {
-                    float res = (float) no1 / no2; // force float division
-                    result.setText(String.format("%.2f", res)); // round to 2 decimal places
+                String input1 = num1.getText().toString();
+                String input2 = num2.getText().toString();
+
+                if (input1.contains(".") || input2.contains("."))
+                {
+                    result.setText("Input only Integers");
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run()
+                        {
+                            num1.setText("");
+                            num2.setText("");
+                            result.setText("");
+                        }
+                    },2000);
                 }
+                else
+                {
+                    int no1 = Integer.parseInt(num1.getText().toString());
+                    int no2 = Integer.parseInt(num2.getText().toString());
+
+                    if (no2 == 0) {
+                        Toast.makeText(getApplicationContext(), "Can't Divide by Zero", Toast.LENGTH_SHORT).show();
+                        result.setText("Undefined");
+                    } else {
+                        float res = (float) no1 / no2; // force float division
+                        result.setText(String.format("%.2f", res)); // round to 2 decimal places
+                    }
+                }
+
             }
         });
         multiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int no1 = Integer.parseInt(num1.getText().toString());
-                int no2 = Integer.parseInt(num2.getText().toString());
-                int res = mul(no1,no2);
-                result.setText(String.valueOf(res));
+
+                String input1 = num1.getText().toString();
+                String input2 = num2.getText().toString();
+
+                if (input1.contains(".") || input2.contains("."))
+                {
+                    result.setText("Input only Integers");
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run()
+                        {
+                            num1.setText("");
+                            num2.setText("");
+                            result.setText("");
+                        }
+                    },2000);
+                }
+                else
+                {
+                    int no1 = Integer.parseInt(num1.getText().toString());
+                    int no2 = Integer.parseInt(num2.getText().toString());
+                    int res = mul(no1,no2);
+                    result.setText(String.valueOf(res));
+                }
             }
         });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
